@@ -1,8 +1,9 @@
+// Assign selected DOM elements to variables
 const gameImage = document.getElementById("game-img");
 const objectTable = document.getElementById("object-table-body");
 let objects = [];
 
-
+// Check if the click is on an object
 function checkClick(clickX,clickY){
     for (let i = 0; i < objects.length; i++) {
         if (clickX >= objects[i].topLeft[0] && clickX <= objects[i].bottomRight[0] && 
@@ -15,6 +16,7 @@ function checkClick(clickX,clickY){
     updateObjectTable();
 }
 
+// Add object to the object list
 function addObject(topLeft,bottomRight,name){
     objects.push({
         topLeft:topLeft,
@@ -24,6 +26,7 @@ function addObject(topLeft,bottomRight,name){
     });
 }
 
+// Update the object table
 function updateObjectTable(){
     let html = "";
     for(object of objects){
@@ -32,11 +35,13 @@ function updateObjectTable(){
     objectTable.innerHTML = html;
 }
 
+// Add objects
 addObject([168,81],[315,134],"Tiger");
 addObject([13,17],[88,75],"Star");
 addObject([125,374],[173,437],"Mushroom");
 updateObjectTable();
 
+// Attach event listener
 gameImage.addEventListener('click', function(event) {
     const rect = this.getBoundingClientRect(); // position of the image
     const x = event.clientX - rect.left;
