@@ -1,26 +1,27 @@
 // Assign selected DOM elements to variables
+let objects = [];
+let currentObjectPos = 0;
 let currentImageNumber = 1;
 const gameImage = document.getElementById("game-img");
-const objectTable = document.getElementById("object-table-body");
-let objects = [];
+const objectQuestion = document.getElementById("object-question");
+const objectInQuestion = document.getElementById("object-in-question");
 
-// Check if the click is on an object
+// Check if the click is on the current object
 function checkClick(clickX,clickY){
-    for (let i = 0; i < objects.length; i++) {
-
-        //Skip objects not on the current image
-        if(objects[i].imageNum != currentImageNumber){
-            continue;
-        }
-
-        if (clickX >= objects[i].topLeft[0] && clickX <= objects[i].bottomRight[0] && 
-            clickY >= objects[i].topLeft[1] && clickY <= objects[i].bottomRight[1]) {
-            objects[i].clicked = true;
-            console.log("Clicked "+objects[i].name);
-        }
+    //Check if objects array is empty
+    if (objects.length === 0) {
+        return;
     }
-    
-    updateObjectTable();
+
+    let currentObject = objects[currentObjectPos];
+    if (clickX >= currentObject.topLeft[0] && clickX <= currentObject.bottomRight[0] && 
+        clickY >= currentObject.topLeft[1] && clickY <= currentObject.bottomRight[1]) {
+
+        //Current object was clicked, remove it from objects array
+        console.log("Clicked "+currentObject.name);
+        objects.splice(currentObjectPos,1);
+        changeCurrentObject();
+    }
 }
 
 // Add object to the object list
@@ -29,18 +30,20 @@ function addObject(imageNum,topLeft,bottomRight,name){
         imageNum:imageNum,
         topLeft:topLeft,
         bottomRight:bottomRight,
-        name:name,
-        clicked:false
+        name:name
     });
 }
 
-// Update the object table
-function updateObjectTable(){
-    let html = "";
-    for(object of objects){
-        html += "<tr><td>"+object.name+"</td><td>"+object.clicked+"</td></tr>";
+// Update the current object
+function changeCurrentObject(){
+    if (objects.length === 0) {
+        objectQuestion.innerHTML = "You found everything!";
+        return;
     }
-    objectTable.innerHTML = html;
+
+    currentObjectPos = Math.floor(Math.random() * objects.length);
+    let currentObject = objects[currentObjectPos];
+    objectInQuestion.innerHTML = currentObject.name;
 }
 
 // Add objects
@@ -90,7 +93,7 @@ addObject(6,[106,194],[134,220],"orange bucket");
 addObject(6,[136,250],[222,319],"sand castle");
 addObject(6,[228,533],[332,596],"beach hat");
 addObject(6,[235,308],[333,407],"tshirt");
-updateObjectTable();
+changeCurrentObject();
 
 // Attach event listener
 gameImage.addEventListener('click', function(event) {
