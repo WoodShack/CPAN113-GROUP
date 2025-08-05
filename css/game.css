@@ -18,3 +18,8 @@
 thead{
     font-weight: bold;
 }
+
+#object-in-question{
+    display: inline-block;
+    font-weight: bold;
+}
