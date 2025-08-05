@@ -1,3 +1,6 @@
+// Imports
+import { addScore, subtractScore } from './score.js';
+
 // Assign selected DOM elements to variables
 let objects = [];
 let currentObjectPos = 0;
@@ -18,9 +21,12 @@ function checkClick(clickX,clickY){
         clickY >= currentObject.topLeft[1] && clickY <= currentObject.bottomRight[1]) {
 
         //Current object was clicked, remove it from objects array
+        addScore(2);
         console.log("Clicked "+currentObject.name);
         objects.splice(currentObjectPos,1);
         changeCurrentObject();
+    } else {
+        subtractScore(1);
     }
 }
 
@@ -105,7 +111,7 @@ gameImage.addEventListener('click', function(event) {
     checkClick(x,y);
 });
 
-/* Image navigation */
+// Image navigation
 document.getElementById("back-btn").addEventListener('click', function(event) {
     if(currentImageNumber == 1){
         currentImageNumber = 6;
@@ -113,7 +119,7 @@ document.getElementById("back-btn").addEventListener('click', function(event) {
         currentImageNumber -= 1;
     }
 
-    updateGameImage();
+    gameImage.src = "img/game-"+currentImageNumber+".webp";
 });
 
 document.getElementById("forward-btn").addEventListener('click', function(event) {
@@ -123,9 +129,5 @@ document.getElementById("forward-btn").addEventListener('click', function(event)
         currentImageNumber += 1;
     }
 
-    updateGameImage();
-});
-
-function updateGameImage(){
     gameImage.src = "img/game-"+currentImageNumber+".webp";
-}
+});
