@@ -1,4 +1,5 @@
 // Assign selected DOM elements to variables
+let currentImageNumber = 1;
 const gameImage = document.getElementById("game-img");
 const objectTable = document.getElementById("object-table-body");
 let objects = [];
@@ -48,3 +49,28 @@ gameImage.addEventListener('click', function(event) {
     const y = event.clientY - rect.top;
     checkClick(x,y);
 });
+
+/* Image navigation */
+document.getElementById("back-btn").addEventListener('click', function(event) {
+    if(currentImageNumber == 1){
+        currentImageNumber = 6;
+    } else {
+        currentImageNumber -= 1;
+    }
+
+    updateGameImage();
+});
+
+document.getElementById("forward-btn").addEventListener('click', function(event) {
+    if(currentImageNumber == 6){
+        currentImageNumber = 1;
+    } else {
+        currentImageNumber += 1;
+    }
+
+    updateGameImage();
+});
+
+function updateGameImage(){
+    gameImage.src = "img/game-"+currentImageNumber+".webp";
+}
