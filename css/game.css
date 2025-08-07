@@ -25,7 +25,9 @@ thead{
 }
 
 #score-table{
-    margin-top: 20px;
+    max-width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 2px;
 }
 
 #score-table th{
