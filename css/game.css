@@ -10,6 +10,31 @@
     box-shadow: 0 0 10px 5px rgba(16, 215, 200, 0.7);
     border-radius: 5px;
 }
+
+#back-btn{
+    top: 50%;
+    left: -40px;
+    transform: translateY(-50%);
+    z-index: 1;
+    background-color: #516cb2;
+    color: whitesmoke;
+    border: none;
+    font-weight: bold;
+}
+
+#forward-btn{
+    top: 50%;
+    right: -40px;
+    transform: translateY(-50%);
+    z-index: 1;
+    background-color: #516cb2;
+    color: whitesmoke;
+    border: none;
+    font-weight: bold;
+}
+
+#back-btn:hover, #forward-btn:hover{
+    background-color: #41568e;
 }
 
 #object-table{
