@@ -18,23 +18,25 @@ body{
 
 #back-btn{
     top: 50%;
-    left: -40px;
+    left: -60px;
     transform: translateY(-50%);
     z-index: 1;
     background-color: #516cb2;
     color: whitesmoke;
     border: none;
+    font-size: 30px;
     font-weight: bold;
 }
 
 #forward-btn{
     top: 50%;
-    right: -40px;
+    right: -60px;
     transform: translateY(-50%);
     z-index: 1;
     background-color: #516cb2;
     color: whitesmoke;
     border: none;
+    font-size: 30px;
     font-weight: bold;
 }
 
