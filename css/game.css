@@ -31,9 +31,11 @@ thead{
 }
 
 #score-table th{
-    background-color: #efefef;
-    border-bottom: 2px solid #000;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 5px;
     text-align: center;
+    color: whitesmoke;
 }
 
 #score-table td{
