@@ -32,27 +32,25 @@ body{
 }
 
 #back-btn{
-    top: 50%;
-    left: -60px;
-    transform: translateY(-50%);
-    z-index: 1;
+    width: 168px;
     background-color: #516cb2;
     color: whitesmoke;
     border: none;
     font-size: 30px;
     font-weight: bold;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 #forward-btn{
-    top: 50%;
-    right: -60px;
-    transform: translateY(-50%);
-    z-index: 1;
+    width: 168px;
     background-color: #516cb2;
     color: whitesmoke;
     border: none;
     font-size: 30px;
     font-weight: bold;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
 }
 
 #back-btn:hover, #forward-btn:hover{
