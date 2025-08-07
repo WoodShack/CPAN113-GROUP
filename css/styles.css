@@ -1,0 +1,9 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image:
+        linear-gradient(to bottom, #91019c, #10d7c8),
+        url('../img/stardust.png');
+    background-blend-mode: multiply;
+    background-size: auto;
+    min-height: 100vh;
+}
