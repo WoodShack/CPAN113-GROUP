@@ -20,23 +20,25 @@
                 <div class="d-flex justify-content-center mb-3">
                     <div id="countdown">45 Seconds</div>
                 </div>
-
-                <!-- Game Image -->
-                <div class="flex-center">
-                    <img id="game-img" src="img/game-1.webp">
-                </div>
-
-                <div class="flex-center">
-                    <button id="back-btn" type="button" class="btn btn-primary">Back</button>
-                    <button id="forward-btn" type="button" class="btn btn-primary">Forward</button>
-                </div>
-
+                
                 <!-- Object Question -->
                 <div class="d-flex justify-content-center mb-3">
                     <div id="object-question">
                         Can you find <div id="object-in-question"></div>?
                     </div>
                 </div>
+
+                <!-- Game Image and Buttons (Back & Forward) -->
+                <div class="d-flex justify-content-center mb-3">
+                    <div class="position-relative d-inline-block">
+                        <button id="back-btn" type="button" class="btn btn-primary position-absolute">&lt;</button>
+                        
+                        <img id="game-img" src="img/game-1.webp" class="img-fluid">
+                        
+                        <button id="forward-btn" type="button" class="btn btn-primary position-absolute">&gt;</button>
+                    </div>
+                </div>
+
             </div>
 
             <div class="col-12 col-md-6">
