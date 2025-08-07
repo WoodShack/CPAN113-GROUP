@@ -7,6 +7,7 @@ const storageKey = "scores";
 const currentScoreTD = document.getElementById("current-score");
 const previousScoresTBody = document.getElementById("previous-scores");
 const countdownText = document.getElementById("countdown");
+const retryBtn = document.getElementById("retry-btn");
 
 // Export functions
 export function addScore(amount){
@@ -62,6 +63,7 @@ const timer = setInterval(() => {
 
     if (timeLeft < 0) {
         countdownText.innerHTML = "Time Is Up!";
+        retryBtn.style.display = "block";
         timeIsUp = true;
         clearInterval(timer);
 
