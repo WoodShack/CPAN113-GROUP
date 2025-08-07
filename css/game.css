@@ -39,8 +39,12 @@ thead{
 }
 
 #score-table td{
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 5px;
     font-weight: normal;
     text-align: center;
+    color: whitesmoke;
 }
 
 #countdown{
