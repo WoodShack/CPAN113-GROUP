@@ -4,9 +4,12 @@
 }
 
 #game-img{
-    max-height: 600px;
     max-width: 100%;
+    max-height: 600px;
     height: auto;
+    box-shadow: 0 0 10px 5px rgba(16, 215, 200, 0.7);
+    border-radius: 5px;
+}
 }
 
 #object-table{
