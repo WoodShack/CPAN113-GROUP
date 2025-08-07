@@ -7,3 +7,22 @@ body{
     background-size: auto;
     min-height: 100vh;
 }
+
+#cover-img{
+    max-width: 100%;
+    width: auto;
+    max-height: 60vh;
+    height: auto;
+}
+
+#start-btn{
+    background-color: #91019c;
+    color: whitesmoke;
+    box-shadow: 0 0 10px 5px rgba(16, 215, 200, 0.7);
+    border: none;
+    font-weight: bold;
+}
+
+#start-btn:hover{
+    background-color: #10d7c8;
+}
